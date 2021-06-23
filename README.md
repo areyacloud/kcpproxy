@@ -45,8 +45,9 @@ server="127.0.0.1:12948,127.0.0.1:12949"
 port="6666,7777"
 ```
 >> 参数说明： 
-server:代理连接本地的kcptun-client地址
-port:代理监听矿机连接端口
+server:代理连接本地的kcptun-client地址  
+port:代理监听矿机连接端口  
+
 >**三、编辑kcptun-client-01配置文件**
 ```json
 vi /work/kcpproxy/config/kcpclient_01.toml
@@ -86,8 +87,9 @@ remoteaddr:kcptun server地址
 key:加密方式aes  
 mode:模式fast1  
 localaddr:监听端口，默认12948  
-log:日志目录
-> 启动Docker
+log:日志目录. 
+
+> **五、启动Docker**
 ```bash
 docker run -it -d --restart always --name kcpproxy -v /work/kcpproxy/config:/work/config -v /work/kcpproxy/log:/work/log --network=host registry.cn-hongkong.aliyuncs.com/huobipool-public/kcpproxy:1.0
 ```
