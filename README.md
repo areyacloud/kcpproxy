@@ -44,6 +44,9 @@ vi /work/kcpproxy/config/proxy_config.toml
 server="127.0.0.1:12948,127.0.0.1:12949"
 port="6666,7777"
 ```
+>> 参数说明： 
+server:代理连接本地的kcptun-client地址
+port:代理监听矿机连接端口
 >**三、编辑kcptun-client-01配置文件**
 ```json
 vi /work/kcpproxy/config/kcpclient_01.toml
