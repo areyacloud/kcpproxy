@@ -40,7 +40,7 @@ mkdir -p /work/kcpproxy/log
 > **二、编辑代理配置文件**
 ```
 vi /work/kcpproxy/config/proxy_config.toml
-```toml
+
 server="127.0.0.1:12948,127.0.0.1:12949"
 port="6666,7777"
 ```
