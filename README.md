@@ -44,7 +44,7 @@ vi /work/kcpproxy/config/proxy_config.toml
 server="127.0.0.1:12948,127.0.0.1:12949"
 port="6666,7777"
 ```
->**三、编辑kcptun clien 01配置文件**
+>**三、编辑kcptun-client-01配置文件**
 ```json
 vi /work/kcpproxy/config/kcpclient_01.toml
 
@@ -65,7 +65,7 @@ localaddr:监听端口，默认12948
 log:日志目录  
 
   
-> **四、编辑kcptun clien 02配置文件**
+> **四、编辑kcptun-client-02配置文件**
 ```json
 vi /work/kcpproxy/config/kcpclient_02.toml
 
@@ -89,8 +89,10 @@ log:日志目录
 docker run -it -d --restart always --name kcpproxy -v /work/kcpproxy/config:/work/config -v /work/kcpproxy/log:/work/log --network=host registry.cn-hongkong.aliyuncs.com/huobipool-public/kcpproxy:1.0
 ```
 # 测试说明
-连接bn.huobipool.com:1800接入点，使用矿机模拟程序模拟3w台矿机压测  
-代理信道延时6ms，处理3w台矿机共599786条share数据耗时20s
+> kcpproxy和kcpserver部署在公网环境下不同机器上kcpserver需要开放监听的udp端口，kcpserver连接bnhuobipool.com:1800接入点，使用矿机模拟程序模拟3w矿机连接kcproxy压测：  
+代理信道延时latency区间：
+380ms--495ms
+proxy每20s正常显示返回的share_rejected信息，12分共处理了3w台矿机合计925548条share信息
 # kcptun说明
 ![kcptun 图标](https://github.com/6612172/kcptun/raw/master/kcptun.png)  
 
